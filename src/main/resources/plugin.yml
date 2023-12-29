@@ -1,0 +1,4 @@
+name: ByteTags
+version: '${version}'
+main: org.sodemc.bytetags.ByteTags
+api-version: '1.19'
