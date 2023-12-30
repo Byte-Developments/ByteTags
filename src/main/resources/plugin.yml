@@ -2,3 +2,8 @@ name: ByteTags
 version: '${version}'
 main: org.sodemc.bytetags.ByteTags
 api-version: '1.19'
+
+commands:
+  bytetag:
+    description: 'Main ByteTag command'
+    usage: '/bytetag'
