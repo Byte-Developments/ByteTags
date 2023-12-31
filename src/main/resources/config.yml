@@ -18,6 +18,15 @@ Tags:
   Rich:
     Material: 'OAK_PLANKS'
     Name: 'Oak One'
+    Amount: 53
+    Enchantments:
+      - Mending: 1
+    Lore:
+      - 'TeST OaK'
+      - 'Oak Test 2 x'
   Best:
     Material: 'STONE'
     Name: 'Stone One'
+    Lore:
+      - 'System.Material.STONE lol'
+      - 'System.Name.Stone One XD'

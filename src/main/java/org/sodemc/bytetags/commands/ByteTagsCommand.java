@@ -1,5 +1,7 @@
 package org.sodemc.bytetags.commands;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.sodemc.bytetags.files.ByteTagsConfig;
 import org.sodemc.bytetags.menus.ByteTagMenu;
+import org.sodemc.bytetags.util.TagsItemFinal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,13 +30,7 @@ public final class ByteTagsCommand implements CommandExecutor, TabExecutor {
         Player player = (Player) sender;
 
         if (args[0].equals("menu")) {
-            ByteTagMenu.ByteTagOpen(player);
-        }
-        else if (args[0].equals("co")) {
-            for (String LoopCoValue : ByteTagsConfig.getInstance().getValList("Tags").stream().toList()) {
-                player.sendMessage(ByteTagsConfig.getInstance().getValue("Tags." + LoopCoValue + ".Material"));
-                player.sendMessage(ByteTagsConfig.getInstance().getValue("Tags." + LoopCoValue + ".Name"));
-            }
+            ByteTagMenu.openGUI(player);
         }
 
         return true;

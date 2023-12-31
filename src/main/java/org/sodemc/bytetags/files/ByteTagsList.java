@@ -7,26 +7,21 @@ import org.sodemc.bytetags.ByteTags;
 import java.io.File;
 import java.util.List;
 
-public class ByteTagsConfig {
-    private final static ByteTagsConfig instance = new ByteTagsConfig();
+public class ByteTagsList {
+    private final static ByteTagsList instance = new ByteTagsList();
     private File file;
     private YamlConfiguration config;
-    private ByteTagsConfig() {
+    private ByteTagsList() {
     }
 
-    public Integer getInt(String IntLoc) { return this.config.getInt(IntLoc); }
 
     public List<String> getValList(String ValListName) { return this.config.getConfigurationSection(ValListName).getKeys(false).stream().toList(); }
 
-    public void getTest(String testLoc) {
-        return this.config.getList();
-    }
-
     public void load() {
-        file = new File(ByteTags.getInstance().getDataFolder(),"config.yml");
+        file = new File(ByteTags.getInstance().getDataFolder(),"tags.yml");
 
         if (!file.exists()) {
-            ByteTags.getInstance().saveResource("config.yml", false);
+            ByteTags.getInstance().saveResource("tags.yml", false);
         }
 
         config = new YamlConfiguration();
@@ -61,7 +56,7 @@ public class ByteTagsConfig {
         save();
     }
 
-    public static ByteTagsConfig getInstance() {
+    public static ByteTagsList getInstance() {
         return instance;
     }
 
