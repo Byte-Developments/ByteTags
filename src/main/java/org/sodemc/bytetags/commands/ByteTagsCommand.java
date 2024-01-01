@@ -9,6 +9,7 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.sodemc.bytetags.files.ByteTagDatabase;
 import org.sodemc.bytetags.files.ByteTagsConfig;
 import org.sodemc.bytetags.menus.ByteTagMenu;
 import org.sodemc.bytetags.util.TagsItemFinal;
@@ -27,10 +28,20 @@ public final class ByteTagsCommand implements CommandExecutor, TabExecutor {
             return true;
         }
 
+
         Player player = (Player) sender;
+
+        if (Arrays.stream(args).toList().isEmpty()) {
+            player.sendMessage(Component.text("Bad Arguments.", NamedTextColor.RED));
+            return true;
+        }
 
         if (args[0].equals("menu")) {
             ByteTagMenu.openGUI(player);
+        }
+        else if (args[0].equals("db")) {
+            ByteTagDatabase.insertData("AIRobotics_", "TestAmeth", player.getUniqueId().toString());
+            //ByteTagDatabase.updateData("Tag456", "UUID123", "Tag");
         }
 
         return true;

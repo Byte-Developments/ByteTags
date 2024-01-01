@@ -2,6 +2,7 @@ package org.sodemc.bytetags;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.sodemc.bytetags.commands.ByteTagsCommand;
+import org.sodemc.bytetags.files.ByteTagDatabase;
 import org.sodemc.bytetags.files.ByteTagsConfig;
 import org.sodemc.bytetags.files.ByteTagsList;
 import org.sodemc.bytetags.menus.ByteTagListener;
@@ -15,6 +16,8 @@ public final class ByteTags extends JavaPlugin {
 
         ByteTagsConfig.getInstance().load();
         ByteTagsList.getInstance().load();
+
+        ByteTagDatabase.createTable();
     }
 
     @Override

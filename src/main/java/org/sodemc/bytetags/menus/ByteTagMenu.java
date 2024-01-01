@@ -24,7 +24,7 @@ public class ByteTagMenu {
         tagItems = new ArrayList<>();
 
         for (String loopTreeValue : ByteTagsConfig.getInstance().getValList("Tags")) {
-            tagItems.add(TagsItemFinal.TagGUIItemCreate(loopTreeValue));
+            tagItems.add(TagsItemFinal.TagGUIItemCreate(loopTreeValue, player.getUniqueId().toString()));
         }
 
         int numItems = tagItems.size();

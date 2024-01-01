@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.sodemc.bytetags.files.ByteTagDatabase;
 import org.sodemc.bytetags.files.ByteTagsConfig;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.UUID;
 
 public class TagsItemFinal {
 
-    public static ItemStack TagGUIItemCreate(String MainTagTree) {
+    public static ItemStack TagGUIItemCreate(String MainTagTree, String PlayerUUID) {
         List<Component> AllTagItemLore = new ArrayList<>();
         List<String> AllTagItemAtt = new ArrayList<>();
 
@@ -44,7 +45,7 @@ public class TagsItemFinal {
         ItemMeta TagGUIMeta = TagGUItem.getItemMeta();
 
         if (ByteTagsConfig.getInstance().getValue("Tags." + MainTagTree + ".Name") != null) {
-            TagItemDisplayname = MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Tags." + MainTagTree + ".Name"));
+            TagItemDisplayname = MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Tags." + MainTagTree + ".Name")).decoration(TextDecoration.ITALIC, false);
             TagGUIMeta.displayName(TagItemDisplayname);
         }
 
@@ -52,26 +53,33 @@ public class TagsItemFinal {
             TagGUIMeta.setCustomModelData(ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + ".CustomModelData"));
         }
 
-        for (String LoopTreeLoreValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore")) {
-            if (!LoopTreeLoreValue.isEmpty()) {
-                AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTreeLoreValue));
+        for (String LoopTreeLoreValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore" + ".Selected")) {
+            AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTreeLoreValue).decoration(TextDecoration.ITALIC, false));
+
+            if (ByteTagDatabase.findTagByUUID(PlayerUUID).equals(MainTagTree)) {
+                System.out.println("Works, aka equals tag");
+            }
+            else if (Bukkit.getPlayer(PlayerUUID).isOp() || Bukkit.getPlayer(PlayerUUID).hasPermission("bytetag.tag.amethyst")) {
+                System.out.println("Still techinically works cuz said im op");
+            }
+            else {
+                System.out.println("Dead :skull:");
             }
         }
 
-        if (!ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Enchantments").isEmpty()) {
-            for (String LoopTreeEnchantVal : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Enchantments")) {
-                if (!LoopTreeEnchantVal.isEmpty()) {
-                    System.out.println(LoopTreeEnchantVal);
-                    if (ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + LoopTreeEnchantVal) != null) {
-                        TagGUIMeta.addEnchant(Enchantment.getByName(LoopTreeEnchantVal.toUpperCase()), ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + LoopTreeEnchantVal), true);
-                    }
-                    else {
-                        TagGUIMeta.addEnchant(Enchantment.getByName(LoopTreeEnchantVal.toUpperCase()), 1, true);
-                    }
-                }
-            }
-        }
-        System.out.println(ByteTagsConfig.getInstance().getValList("Tags." + MainTagTree + ".Enchantments").toString());
+//        if (!ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Enchantments").isEmpty()) {
+//            for (String LoopTreeEnchantVal : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Enchantments")) {
+//                if (!LoopTreeEnchantVal.isEmpty()) {
+//                    System.out.println(LoopTreeEnchantVal);
+//                    if (ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + LoopTreeEnchantVal) != null) {
+//                        TagGUIMeta.addEnchant(Enchantment.getByName(LoopTreeEnchantVal.toUpperCase()), ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + LoopTreeEnchantVal), true);
+//                    }
+//                    else {
+//                        TagGUIMeta.addEnchant(Enchantment.getByName(LoopTreeEnchantVal.toUpperCase()), 1, true);
+//                    }
+//                }
+//            }
+//        }
 
         for (String LoopTreeAttValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Attributes")) {
             if (!LoopTreeAttValue.isEmpty()) {

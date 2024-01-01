@@ -15,18 +15,27 @@
 # +-------------------------------------------------------------------------+ #
 
 Tags:
-  Rich:
-    Material: 'OAK_PLANKS'
-    Name: 'Oak One'
-    Amount: 53
-    Enchantments:
-      - Mending: 1
+  Amethyst:
+    Material: 'PLAYER_HEAD'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRlOGZmMzBlMzkzNzA5ODYzN2MwYWYwM2ExZjJhNmIxN2YwZTgyOGFiMmE1N2EyNjdhMDFkYTQ4NGJhMGM1NyJ9fX0='
+    Name: '<#9966cc>ᴀᴍᴇᴛʜʏsᴛ ◆</#9966cc> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.amethyst'
     Lore:
-      - 'TeST OaK'
-      - 'Oak Test 2 x'
-  Best:
-    Material: 'STONE'
-    Name: 'Stone One'
-    Lore:
-      - 'System.Material.STONE lol'
-      - 'System.Name.Stone One XD'
+      Selected:
+      - '<gray>This amethyst is worth billions and</gray>'
+      - '<gray>very beautiful when used :)</gray>'
+      - ''
+      - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white>{TAG}</white>'
+      - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+      - ''
+      - '<#ffff00>◆ Selected!</#ffff00>'
+#  Best:
+#    Material: 'PLAYER_HEAD'
+#    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI1MzQ3Y2E4MzhhMzVhNzUyOWRlZmMwMmEyZmFmMTEwZGE0YTI5MzI3MjJjYzNkYTE2ZTlmMWMxZGI2OWRlIn19fQ'
+#    Name: '<dark_gray>[</dark_gray><#ce2029>ɢʜᴏsᴛ ʀɪᴅᴇʀ</#ce2029> <bold>☠</bold><dark_gray>]</dark_gray>'
+#    Amount: 1
+#    Lore:
+#      - '<gray>A skull rider filled with anger and irritation,</gray>'
+#      - '<gray>he always slaughters criminals!</gray>'
+#      - '<gray>because he really hates criminals.</gray>'

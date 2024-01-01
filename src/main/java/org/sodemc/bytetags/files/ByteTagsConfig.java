@@ -18,10 +18,6 @@ public class ByteTagsConfig {
 
     public List<String> getValList(String ValListName) { return this.config.getConfigurationSection(ValListName).getKeys(false).stream().toList(); }
 
-    public void getTest(String testLoc) {
-        return this.config.getList();
-    }
-
     public void load() {
         file = new File(ByteTags.getInstance().getDataFolder(),"config.yml");
 
