@@ -37,7 +37,7 @@ public final class ByteTagsCommand implements CommandExecutor, TabExecutor {
         }
 
         if (args[0].equals("menu")) {
-            ByteTagMenu.openGUI(player);
+            ByteTagMenu.OpenTagMenu(player);
         }
         else if (args[0].equals("db")) {
             ByteTagDatabase.insertData("AIRobotics_", "TestAmeth", player.getUniqueId().toString());

@@ -5,10 +5,10 @@ import com.destroystokyo.paper.profile.ProfileProperty;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -23,7 +23,7 @@ import java.util.UUID;
 
 public class TagsItemFinal {
 
-    public static ItemStack TagGUIItemCreate(String MainTagTree, String PlayerUUID) {
+    public static ItemStack TagGUIItemCreate(String MainTagTree, String PlayerUUID, Player TagItemPlayer) {
         List<Component> AllTagItemLore = new ArrayList<>();
         List<String> AllTagItemAtt = new ArrayList<>();
 
@@ -53,17 +53,25 @@ public class TagsItemFinal {
             TagGUIMeta.setCustomModelData(ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + ".CustomModelData"));
         }
 
-        for (String LoopTreeLoreValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore" + ".Selected")) {
-            AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTreeLoreValue).decoration(TextDecoration.ITALIC, false));
-
-            if (ByteTagDatabase.findTagByUUID(PlayerUUID).equals(MainTagTree)) {
-                System.out.println("Works, aka equals tag");
+        if (ByteTagDatabase.findTagByUUID(PlayerUUID).equals(MainTagTree)) {
+            for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Selected")) {
+                if (!LoopTagValue.isEmpty()) {
+                    AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
+                }
             }
-            else if (Bukkit.getPlayer(PlayerUUID).isOp() || Bukkit.getPlayer(PlayerUUID).hasPermission("bytetag.tag.amethyst")) {
-                System.out.println("Still techinically works cuz said im op");
+        }
+        else if (TagItemPlayer.isOp() || TagItemPlayer.hasPermission(ByteTagsConfig.getInstance().getValue("Tags." + MainTagTree + ".Permission"))) {
+            for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Unlocked")) {
+                if (!LoopTagValue.isEmpty()) {
+                    AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
+                }
             }
-            else {
-                System.out.println("Dead :skull:");
+        }
+        else {
+            for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Locked")) {
+                if (!LoopTagValue.isEmpty()) {
+                    AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
+                }
             }
         }
 
