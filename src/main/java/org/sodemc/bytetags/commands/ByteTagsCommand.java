@@ -10,10 +10,13 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.sodemc.bytetags.files.ByteTagDatabase;
-import org.sodemc.bytetags.files.ByteTagsConfig;
 import org.sodemc.bytetags.menus.ByteTagMenu;
-import org.sodemc.bytetags.util.TagsItemFinal;
+import org.sodemc.bytetags.util.CheckLicense;
+import org.sodemc.bytetags.util.SelectTag;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,10 +41,6 @@ public final class ByteTagsCommand implements CommandExecutor, TabExecutor {
 
         if (args[0].equals("menu")) {
             ByteTagMenu.OpenTagMenu(player);
-        }
-        else if (args[0].equals("db")) {
-            ByteTagDatabase.insertData("AIRobotics_", "TestAmeth", player.getUniqueId().toString());
-            //ByteTagDatabase.updateData("Tag456", "UUID123", "Tag");
         }
 
         return true;

@@ -53,7 +53,7 @@ public class TagsItemFinal {
             TagGUIMeta.setCustomModelData(ByteTagsConfig.getInstance().getInt("Tags." + MainTagTree + ".CustomModelData"));
         }
 
-        if (ByteTagDatabase.findTagByUUID(PlayerUUID).equals(MainTagTree)) {
+        if (ByteTagDatabase.findTagByUUID(PlayerUUID) != null && ByteTagDatabase.findTagByUUID(PlayerUUID).equals(MainTagTree)) {
             for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Selected")) {
                 if (!LoopTagValue.isEmpty()) {
                     AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));

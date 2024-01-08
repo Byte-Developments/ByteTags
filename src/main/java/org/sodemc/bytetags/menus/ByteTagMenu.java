@@ -14,6 +14,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -48,21 +49,18 @@ public class ByteTagMenu {
         int startIndex = currentPage * ItemsPerPage;
         int endIndex = Math.min(startIndex + ItemsPerPage, numItems);
 
-        System.out.println("Max Pages: " + numPages);
-        System.out.println("Current Page: " + (currentPage + 1));
-
         TextComponent MenuTitle = (TextComponent) MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Menu.Title"), Placeholder.unparsed("page", String.valueOf(currentPage + 1)), Placeholder.unparsed("max", String.valueOf(numPages)));
 
         Inventory gui = Bukkit.createInventory(null, 54, MenuTitle);
-        
+
         for (int i = 0; i < 54; i += 9) {
-            gui.setItem(i, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("1", NamedTextColor.GREEN), 1));
-            gui.setItem(i + 8, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("1", NamedTextColor.GREEN), 1));
+            gui.setItem(i, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("", NamedTextColor.GREEN), 1));
+            gui.setItem(i + 8, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("", NamedTextColor.GREEN), 1));
         }
         
         for (int i = 0; i < 9; i++) {
-            gui.setItem(i, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("1", NamedTextColor.GREEN), 1));
-            gui.setItem(i + 45, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("1", NamedTextColor.GREEN), 1));
+            gui.setItem(i, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("", NamedTextColor.GREEN), 1));
+            gui.setItem(i + 45, CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("", NamedTextColor.GREEN), 1));
         }
 
         int guiIndex = 10;
@@ -123,10 +121,9 @@ public class ByteTagMenu {
             gui.setItem(4, TagIndicatorItem);
         }
 
-        TagMenuPlayer.setMetadata("OpenedTagMenu", new FixedMetadataValue(ByteTags.getInstance(), true));
-        System.out.println("Player should have metadata: " + TagMenuPlayer.hasMetadata("OpenedTagMenu"));
-
         TagMenuPlayer.openInventory(gui);
+
+        TagMenuPlayer.setMetadata("OpenedTagMenu", new FixedMetadataValue(ByteTags.getInstance(), true));
     }
 
     public static List<ItemStack> getItems() {
@@ -144,6 +141,56 @@ public class ByteTagMenu {
         ButtonItemMeta.displayName(ButtonItemName);
         ButtonItem.setItemMeta(ButtonItemMeta);
         return ButtonItem;
+    }
+
+    public static void UpdateTagMenu(Player player) {
+        if (player.hasMetadata("OpenedTagMenu")) {
+            Inventory gui = player.getOpenInventory().getTopInventory();
+
+            if (gui != null && gui.getHolder() == null) {
+                int startIndex = currentPage * ItemsPerPage;
+                int endIndex = Math.min(startIndex + ItemsPerPage, tagItems.size());
+
+                for (int i = 10; i <= 16; i++) {
+                    gui.setItem(i, new ItemStack(Material.AIR));
+                }
+                for (int i = 19; i <= 25; i++) {
+                    gui.setItem(i, new ItemStack(Material.AIR));
+                }
+                for (int i = 28; i <= 34; i++) {
+                    gui.setItem(i, new ItemStack(Material.AIR));
+                }
+                for (int i = 37; i <= 43; i++) {
+                    gui.setItem(i, new ItemStack(Material.AIR));
+                }
+
+                gui.setItem(ByteTagsConfig.getInstance().getInt("Menu.Items.BackPageButton.Slot"), CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("", NamedTextColor.GREEN), 1));
+                gui.setItem(ByteTagsConfig.getInstance().getInt("Menu.Items.NextPageButton.Slot"), CreateButtonItem(Material.GRAY_STAINED_GLASS_PANE, Component.text("", NamedTextColor.GREEN), 1));
+
+                if (currentPage > 0) {
+                    gui.setItem(ByteTagsConfig.getInstance().getInt("Menu.Items.BackPageButton.Slot"), CreateButtonItem(Material.getMaterial(ByteTagsConfig.getInstance().getValue("Menu.Items.BackPageButton.Material")), MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Menu.Items.NextPageButton.Name")).decoration(TextDecoration.ITALIC, false), ByteTagsConfig.getInstance().getInt("Menu.Items.NextPageButton.Amount")));
+                }
+                if (currentPage < numPages - 1) {
+                    gui.setItem(ByteTagsConfig.getInstance().getInt("Menu.Items.NextPageButton.Slot"), CreateButtonItem(Material.getMaterial(ByteTagsConfig.getInstance().getValue("Menu.Items.NextPageButton.Material")), MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Menu.Items.NextPageButton.Name")).decoration(TextDecoration.ITALIC, false), ByteTagsConfig.getInstance().getInt("Menu.Items.NextPageButton.Amount")));
+                }
+
+                int guiIndex = 10;
+                for (int i = 0; i < ItemsPerPage; i++) {
+                    int index = startIndex + i;
+                    if (index < tagItems.size()) {
+                        int row = i / ItemsPerRow;
+                        int column = i % ItemsPerRow;
+
+                        guiIndex = row * 9 + column + 10;
+                        gui.setItem(guiIndex, tagItems.get(index));
+
+                        if ((i + 1) % ItemsPerRow == 0 && i != 0) {
+                            guiIndex += 3;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static int FindCurrentPage() {
