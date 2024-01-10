@@ -11,6 +11,7 @@ public class ByteTagsConfig {
     private final static ByteTagsConfig instance = new ByteTagsConfig();
     private File file;
     private YamlConfiguration config;
+
     private ByteTagsConfig() {
     }
 

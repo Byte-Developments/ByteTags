@@ -1,58 +1,15 @@
 package org.sodemc.bytetags.commands;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
-import org.bukkit.command.Command;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.sodemc.bytetags.files.ByteTagDatabase;
-import org.sodemc.bytetags.menus.ByteTagMenu;
-import org.sodemc.bytetags.util.CheckLicense;
-import org.sodemc.bytetags.util.SelectTag;
+import org.sodemc.bytetags.files.ByteTagsConfig;
+import revxrsal.commands.annotation.*;
+import revxrsal.commands.bukkit.annotation.CommandPermission;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public final class ByteTagsCommand implements CommandExecutor, TabExecutor {
-
-    @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use this command!");
-
-            return true;
-        }
+public final class ByteTagsCommand {
 
 
-        Player player = (Player) sender;
-
-        if (Arrays.stream(args).toList().isEmpty()) {
-            player.sendMessage(Component.text("Bad Arguments.", NamedTextColor.RED));
-            return true;
-        }
-
-        if (args[0].equals("menu")) {
-            ByteTagMenu.OpenTagMenu(player);
-        }
-
-        return true;
-    }
-
-    @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-
-        if (args.length == 1) {
-            return Arrays.asList("broadcast");
-        }
-
-        return new ArrayList<>();
-    }
 }

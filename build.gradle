@@ -20,6 +20,7 @@ repositories {
     maven {
         url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
     }
+    maven { url "https://libraries.minecraft.net" }
 }
 
 dependencies {
@@ -28,6 +29,15 @@ dependencies {
     compileOnly 'me.clip:placeholderapi:2.11.5'
     implementation 'com.github.Revxrsal.Lamp:common:3.1.8'
     implementation("com.github.Revxrsal.Lamp:bukkit:3.1.8")
+    implementation 'me.lucko:commodore:2.2'
+}
+
+shadowJar {
+    dependencies {
+        exclude(dependency('com.mojang:brigadier'))
+    }
+
+    relocate 'me.lucko.commodore', 'org.sodemc.bytetag.commodore'
 }
 
 compileJava {
