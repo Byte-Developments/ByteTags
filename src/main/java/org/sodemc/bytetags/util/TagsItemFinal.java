@@ -55,23 +55,17 @@ public class TagsItemFinal {
 
         if (ByteTagDatabase.findTagByUUID(PlayerUUID) != null && ByteTagDatabase.findTagByUUID(PlayerUUID).equals(MainTagTree)) {
             for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Selected")) {
-                if (!LoopTagValue.isEmpty()) {
-                    AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
-                }
+                AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
             }
         }
         else if (TagItemPlayer.isOp() || TagItemPlayer.hasPermission(ByteTagsConfig.getInstance().getValue("Tags." + MainTagTree + ".Permission"))) {
             for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Unlocked")) {
-                if (!LoopTagValue.isEmpty()) {
-                    AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
-                }
+                AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
             }
         }
         else {
             for (String LoopTagValue : ByteTagsConfig.getInstance().getList("Tags." + MainTagTree + ".Lore.Locked")) {
-                if (!LoopTagValue.isEmpty()) {
-                    AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
-                }
+                AllTagItemLore.add(MiniMessage.miniMessage().deserialize(LoopTagValue, Placeholder.unparsed("tag", MainTagTree)).decoration(TextDecoration.ITALIC, false));
             }
         }
 
@@ -114,7 +108,7 @@ public class TagsItemFinal {
                 }
             }
 
-            TagGUItem.setItemMeta(TagGUISkullMeta);
+            TagGUItem.setItemMeta(DataTag.SetDataTag(TagGUISkullMeta, MainTagTree));
             ItemMetaType = "SkullMeta";
         }
 
@@ -125,7 +119,7 @@ public class TagsItemFinal {
         }
 
         if (ItemMetaType.equals("ItemMeta")) {
-            TagGUItem.setItemMeta(TagGUIMeta);
+            TagGUItem.setItemMeta(DataTag.SetDataTag(TagGUIMeta, MainTagTree));
         }
 
         return TagGUItem;

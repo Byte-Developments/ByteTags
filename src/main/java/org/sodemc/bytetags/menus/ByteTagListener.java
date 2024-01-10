@@ -1,8 +1,6 @@
 package org.sodemc.bytetags.menus;
 
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Material;
@@ -17,6 +15,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.sodemc.bytetags.ByteTags;
 import org.sodemc.bytetags.files.ByteTagsConfig;
 import org.sodemc.bytetags.menus.ByteTagMenu;
+import org.sodemc.bytetags.util.DataTag;
 import org.sodemc.bytetags.util.SelectTag;
 
 import java.util.List;
@@ -27,8 +26,6 @@ public class ByteTagListener implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         Player OpenEventPlayer = (Player) event.getWhoClicked();
-
-        TextComponent MenuTitle = (TextComponent) MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Menu.Title"), Placeholder.unparsed("page", String.valueOf(ByteTagMenu.FindCurrentPage() + 1)), Placeholder.unparsed("max", String.valueOf(ByteTagMenu.FindMaxPage())));
 
         if (OpenEventPlayer.hasMetadata("OpenedTagMenu")) {
             List<ItemStack> items = ByteTagMenu.getItems();
@@ -44,9 +41,9 @@ public class ByteTagListener implements Listener {
             }
             else {
                 for (String LoopTag : ByteTagsConfig.getInstance().getValList("Tags")) {
-                    if ((MiniMessage.miniMessage().deserialize(ByteTagsConfig.getInstance().getValue("Tags." + LoopTag + ".Name")).decoration(TextDecoration.ITALIC, false)).contains(event.getCurrentItem().getItemMeta().displayName())) {
+                    if (DataTag.GetDataTag(event.getCurrentItem().getItemMeta(), LoopTag) && event.getCurrentItem().getType() != Material.AIR && event.getCurrentItem().getType() != Material.GRAY_STAINED_GLASS_PANE) {
                         SelectTag.SelectByteTag(OpenEventPlayer, LoopTag);
-                        OpenEventPlayer.sendMessage("Selecting Now...");
+                        
                         break;
                     }
                 }

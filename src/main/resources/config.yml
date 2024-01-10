@@ -36,6 +36,11 @@ Menu:
       Name: '<blue>Indicator</blue>'
       Texture: '<player>'
 
+  Notification:
+    Icon: 'MOJANG_BANNER_PATTERN'
+    Style: 'TASK'
+    Body: '<blue>Changed tag.</blue> <#55b8e6>Test :o</#55b8e6>'
+
 Messages:
   Prefix: '<#00d7a2><bold>ᴛᴀɢs</bold></#00d7a2> <dark_gray>┃</dark_gray>' # Use `<prefix>` for the prefix in any of these messages.
   No-Permission: '<prefix> <#adadad>You don''t have permission to execute this action.</#adadad>'
@@ -1070,27 +1075,596 @@ Tags:
         - ''
         - '<#ffff00>◆ Selected!</#ffff00>'
       Unlocked:
-        - '<gray>Power failure?? Use a candle and light</gray>'
-        - '<gray>up your day!</gray>'
+        - '<gray>Good people will get good angel!</gray>'
+        - '<gray><italic>( God also loves good people too! )</italic></gray>'
         - ''
         - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
         - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
         - ''
         - '<#ffff00>◆ Click to select!</#ffff00>'
       Locked:
-        - '<gray>Power failure?? Use a candle and light</gray>'
-        - '<gray>up your day!</gray>'
+        - '<gray>Good people will get good angel!</gray>'
+        - '<gray><italic>( God also loves good people too! )</italic></gray>'
         - ''
         - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
         - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
         - ''
         - '<#ff0000>◆ Locked tag!</#ff0000>'
-#  Best:
-#    Material: 'PLAYER_HEAD'
-#    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI1MzQ3Y2E4MzhhMzVhNzUyOWRlZmMwMmEyZmFmMTEwZGE0YTI5MzI3MjJjYzNkYTE2ZTlmMWMxZGI2OWRlIn19fQ'
-#    Name: '<dark_gray>[</dark_gray><#ce2029>ɢʜᴏsᴛ ʀɪᴅᴇʀ</#ce2029> <bold>☠</bold><dark_gray>]</dark_gray>'
-#    Amount: 1
-#    Lore:
-#      - '<gray>A skull rider filled with anger and irritation,</gray>'
-#      - '<gray>he always slaughters criminals!</gray>'
-#      - '<gray>because he really hates criminals.</gray>'
+
+  Devil:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#ed2828>ᴅᴇᴠɪʟ >:)</#ed2828><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWRhMzkyNjllZjQ1ZjgyNWVjNjFiYjRmOGFhMDliZDNjZjA3OTk2ZmI2ZmFjMzM4YTZlOTFkNjY5OWFlNDI1In19fQ=='
+    Name: '<#ed2828>ᴅᴇᴠɪʟ >:)</#ed2828> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.devil'
+    Lore:
+      Selected:
+        - '<gray>Bad people will be given an consequences</gray>'
+        - '<gray>for what they have done to the others!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Bad people will be given an consequences</gray>'
+        - '<gray>for what they have done to the others!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Bad people will be given an consequences</gray>'
+        - '<gray>for what they have done to the others!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Remastered:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#ffbb00>ʀᴇᴍᴀsᴛᴇʀᴇᴅ ★</#ffbb00><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjczMTc3ODBmODE3ZjcxNzY0Zjc1Yjc5MjM2ZTFiNDgyZjZlYzQ4YTU3ZmIxNTFiZWUxODZiODJlZGE5NmVmOSJ9fX0='
+    Name: '<#ffbb00>ʀᴇᴍᴀsᴛᴇʀᴇᴅ ★</#ffbb00> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.remastered'
+    Lore:
+      Selected:
+        - '<gray>Much nicer, prettier, and more beautiful</gray>'
+        - '<gray>''remastered'' edition!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Much nicer, prettier, and more beautiful</gray>'
+        - '<gray>''remastered'' edition!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Much nicer, prettier, and more beautiful</gray>'
+        - '<gray>''remastered'' edition!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Fallen_Angle:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><white>ғᴀʟʟᴇɴ ᴀɴɢᴇʟ</white> <#00bbff>♥</#00bbff><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzgzMmZlYzc3NjJkN2ZlNjg0MmQwMWYwNGE4NjlmMjQ4NmMwMjkyZDljNzVhNzQ0OTNkYTBjODQyNTc5ZGRiNyJ9fX0='
+    Name: '<white>ғᴀʟʟᴇɴ ᴀɴɢᴇʟ</white> <#00bbff>♥</#00bbff> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.fallenangle'
+    Lore:
+      Selected:
+        - '<gray><italic>tryna fly but im not able sooo, ooo</italic></gray>'
+        - '<gray><italic>and i need you to know, that its okay</italic></gray>'
+        - '<gray><italic>to let me go, cause no matter where</italic></gray>'
+        - '<gray><italic>my heart is there''s no way ill ever</italic></gray>'
+        - '<gray><italic>reach up to heaven to you....</italic></gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray><italic>tryna fly but im not able sooo, ooo</italic></gray>'
+        - '<gray><italic>and i need you to know, that its okay</italic></gray>'
+        - '<gray><italic>to let me go, cause no matter where</italic></gray>'
+        - '<gray><italic>my heart is there''s no way ill ever</italic></gray>'
+        - '<gray><italic>reach up to heaven to you....</italic></gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray><italic>tryna fly but im not able sooo, ooo</italic></gray>'
+        - '<gray><italic>and i need you to know, that its okay</italic></gray>'
+        - '<gray><italic>to let me go, cause no matter where</italic></gray>'
+        - '<gray><italic>my heart is there''s no way ill ever</italic></gray>'
+        - '<gray><italic>reach up to heaven to you....</italic></gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Unbreakable:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#BB1131>ᴜɴʙʀᴇᴀᴋᴀʙʟᴇ</#BB1131><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFiMWVlYWEyZTkwZjhlZmY4NGI0OGJjYmYyMDE4NDNkZmE5MzlmNmZhNDY3OWYzMDJmNzhhYzNhZTdmN2Q5NyJ9fX0='
+    Name: '<#BB1131>ᴜɴʙʀᴇᴀᴋᴀʙʟᴇ</#BB1131> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.unbreakable'
+    Lore:
+      Selected:
+        - '<gray>Just like friendship! unbreakable</gray>'
+        - '<gray>and support each other..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Just like friendship! unbreakable</gray>'
+        - '<gray>and support each other..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Just like friendship! unbreakable</gray>'
+        - '<gray>and support each other..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Kermit:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#008000>ᴋᴇʀᴍɪᴛ</#008000><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzBkYjdjN2FjNmY1Y2UwZDU2MGY4MTM2Mzg0NTkxM2FhMWJhYWQ5MmYyMTQ5NDMxZTM3MTM0NTkxNzBhZTY0ZCJ9fX0='
+    Name: '<#008000>ᴋᴇʀᴍɪᴛ</#008000> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.kermit'
+    Lore:
+      Selected:
+        - '<gray>Your best childhood movie!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Your best childhood movie!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Your best childhood movie!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  British:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#9999ff>ʙʀɪᴛɪsʜ</#9999ff><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmMyZTE0ZjY1NDlkOTYwYzZjMWJjN2U1YzczM2FiYjk2ZDE3ZTQ0ZDM2OTIzNjVhMGRiOWM0ZTk2YjEzZDBkYiJ9fX0='
+    Name: '<#9999ff>ʙʀɪᴛɪsʜ</#9999ff> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.british'
+    Lore:
+      Selected:
+        - '<gray>Isn''t it a bit wild? british is a tag o_O;</gray>'
+        - '<gray>bruh..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Isn''t it a bit wild? british is a tag o_O;</gray>'
+        - '<gray>bruh..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Isn''t it a bit wild? british is a tag o_O;</gray>'
+        - '<gray>bruh..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Frog_Gang:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#5edd5f>ғʀᴏɢ ɢᴀɴɢ</#5edd5f><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWI1Y2NlMDg2MDA0NDI3MmRkOTk0NzJkYjQ5ZWQ3OWM0ZWViM2JkMmMzNmVjOWEzNTc0OGRkZGQwZGZmZGRiMyJ9fX0='
+    Name: '<#5edd5f>ғʀᴏɢ ɢᴀɴɢ</#5edd5f> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.froggang'
+    Lore:
+      Selected:
+        - '<gray>Frogs have different colors!</gray>'
+        - '<gray>the snowy, desert, and plains frog, they</gray>'
+        - '<gray>also can eat goats lol..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Frogs have different colors!</gray>'
+        - '<gray>the snowy, desert, and plains frog, they</gray>'
+        - '<gray>also can eat goats lol..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Frogs have different colors!</gray>'
+        - '<gray>the snowy, desert, and plains frog, they</gray>'
+        - '<gray>also can eat goats lol..</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Otherside:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#aaff00>ᴏᴛʜᴇʀ sɪᴅᴇ</#aaff00><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWNmZjgzMmVmMzgyOGNlNzIxNWMzNmU5MzdhMTgzNjI3ODk4ZTJhMDI3Yzc0NDZjMjhjNjVlYzU4ZDM0NDBlYyJ9fX0='
+    Name: '<#5edd5f>ᴏᴛʜᴇʀ sɪᴅᴇ</#5edd5f> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.otherside'
+    Lore:
+      Selected:
+        - '<gray>A rare and ancient disc that can only be found</gray>'
+        - '<gray>on a generated structure only! (dungeon, temple, and etc!)</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>A rare and ancient disc that can only be found</gray>'
+        - '<gray>on a generated structure only! (dungeon, temple, and etc!)</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>A rare and ancient disc that can only be found</gray>'
+        - '<gray>on a generated structure only! (dungeon, temple, and etc!)</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  PC:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#4ab3e0>ᴘᴄ</#4ab3e0><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVjMjRjMGJiODBlZTQ2MGEyMzc5OGExYjY3NTZiOWQ2ZjIzZTAwMzYwYWU1ODMwOWU3NzEyM2JjNGJjZjUyMiJ9fX0='
+    Name: '<#4ab3e0>ᴘᴄ</#4ab3e0> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.pc'
+    Lore:
+      Selected:
+        - '<gray>A computer made by Microsoft since</gray>'
+        - '<gray>1981! You might be using one.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>A computer made by Microsoft since</gray>'
+        - '<gray>1981! You might be using one.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>A computer made by Microsoft since</gray>'
+        - '<gray>1981! You might be using one.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Snake:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#79ed79>sɴᴀᴋᴇ</#79ed79><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGY4MDI0YzY4N2IxOTE0YjhiYTQ4OGU3ZTFkNjE0OTljMTViMjE5MTQ0YzNjNmQ2ODNjMDc4MjVhOGQ4MDcxNSJ9fX0='
+    Name: '<#4ab3e0>sɴᴀᴋᴇ</#4ab3e0> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.snake'
+    Lore:
+      Selected:
+        - '<gray>Snakes have poisonous venom,</gray>'
+        - '<gray>but not rice field snakes!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Snakes have poisonous venom,</gray>'
+        - '<gray>but not rice field snakes!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Snakes have poisonous venom,</gray>'
+        - '<gray>but not rice field snakes!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Yeti:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#d9c3e0>ʏᴇᴛɪ</#d9c3e0><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOThjNjk5ZTNhOGI0MGM2MWQ0YTM1OTA0MDRhZTliYTUyNjJhYjRhMzVkODQyZjI3MWFmNDEzZDdmNGQyMGY1YSJ9fX0='
+    Name: '<#d9c3e0>ʏᴇᴛɪ</#d9c3e0> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.yeti'
+    Lore:
+      Selected:
+        - '<gray>the most dangerous monster or creature</gray>'
+        - '<gray>is the yeti! the snow monster!</gray>'
+        - '<gray>myth or fact?</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>the most dangerous monster or creature</gray>'
+        - '<gray>is the yeti! the snow monster!</gray>'
+        - '<gray>myth or fact?</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>the most dangerous monster or creature</gray>'
+        - '<gray>is the yeti! the snow monster!</gray>'
+        - '<gray>myth or fact?</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Globe:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><gradient:#4287F5:#48F542>ɢʟᴏʙᴇ</gradient><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODc5ZTU0Y2JlODc4NjdkMTRiMmZiZGYzZjE4NzA4OTQzNTIwNDhkZmVjZDk2Mjg0NmRlYTg5M2IyMTU0Yzg1In19fQ=='
+    Name: '<gradient:#4287F5:#48F542>ɢʟᴏʙᴇ</gradient> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.globe'
+    Lore:
+      Selected:
+        - '<gray>Little do you know, globe was a very expensive</gray>'
+        - '<gray>furniture back in 90~ish!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Little do you know, globe was a very expensive</gray>'
+        - '<gray>furniture back in 90~ish!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Little do you know, globe was a very expensive</gray>'
+        - '<gray>furniture back in 90~ish!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Programmer:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#7e42f5>ᴘʀᴏɢʀᴀᴍᴍᴇʀ</#7e42f5><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODc5ZTU0Y2JlODc4NjdkMTRiMmZiZGYzZjE4NzA4OTQzNTIwNDhkZmVjZDk2Mjg0NmRlYTg5M2IyMTU0Yzg1In19fQ=='
+    Name: '<#7e42f5>ᴘʀᴏɢʀᴀᴍᴍᴇʀ</#7e42f5> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.programmer'
+    Lore:
+      Selected:
+        - '<gray>"One time some developers</gray>'
+        - '<gray>made a game using a coding</gray>'
+        - '<gray>language called Java</gray>'
+        - '<gray>and it became huge"</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>"One time some developers</gray>'
+        - '<gray>made a game using a coding</gray>'
+        - '<gray>language called Java</gray>'
+        - '<gray>and it became huge"</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>"One time some developers</gray>'
+        - '<gray>made a game using a coding</gray>'
+        - '<gray>language called Java</gray>'
+        - '<gray>and it became huge"</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Mythowl:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#ff88ff>ᴍʏᴛʜ ᴏᴡʟ</#ff88ff><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc4YmE5NTZkZWE4N2U0Mzg4MTQxZmZlMzg2NzNjOWRkMTExYjNmOGU3NGM1YjY0MDBhNThmZjE4NjVjNDZhZiJ9fX0='
+    Name: '<#ff88ff>ᴍʏᴛʜ ᴏᴡʟ</#ff88ff> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.mythowl'
+    Lore:
+      Selected:
+        - '<gray>different from other birds! when the owl</gray>'
+        - '<gray>flies it doesn''t make the slightest sound!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>different from other birds! when the owl</gray>'
+        - '<gray>flies it doesn''t make the slightest sound!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>different from other birds! when the owl</gray>'
+        - '<gray>flies it doesn''t make the slightest sound!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Birb:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#47ffa9>ʙɪʀʙ</#47ffa9><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJlZTY0MmNiNGI0ZmI2NjcxZGVjOWFiOTM0OWYwYzFjYTgzYmMxNTI3Mzg5NTZjMWVmYTJmZjJjMTAzMDk2MCJ9fX0='
+    Name: '<#47ffa9>ʙɪʀʙ</#47ffa9> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.birb'
+    Lore:
+      Selected:
+        - '<gray>Who doesn''t like birb?, if you hate them</gray>'
+        - '<gray>you are marked as a</gray> <#ff3344><bold>KAREN</bold></#ff3344><gray>!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>Who doesn''t like birb?, if you hate them</gray>'
+        - '<gray>you are marked as a</gray> <#ff3344><bold>KAREN</bold></#ff3344><gray>!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>Who doesn''t like birb?, if you hate them</gray>'
+        - '<gray>you are marked as a</gray> <#ff3344><bold>KAREN</bold></#ff3344><gray>!</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Copper_Golem:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#ff9305>ᴄᴏᴘᴘᴇʀ ɢᴏʟᴇᴍ</#ff9305><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWRjZmM2Nzk1NDU0MTkyYWZhN2E4Mjg5MWVhMGZkZWQyNTEyOWY0YmRkYTEyNmQxNmZmMGE2YmMxYTI5OTk5MiJ9fX0='
+    Name: '<#ff9305>ᴄᴏᴘᴘᴇʀ ɢᴏʟᴇᴍ</#ff9305> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.coppergolem'
+    Lore:
+      Selected:
+        - '<gray>A very usefull mob for redstone minecrafters!</gray>'
+        - '<gray>you still live in our hearts forever.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>A very usefull mob for redstone minecrafters!</gray>'
+        - '<gray>you still live in our hearts forever.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>A very usefull mob for redstone minecrafters!</gray>'
+        - '<gray>you still live in our hearts forever.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
+
+  Nani:
+    Material: 'PLAYER_HEAD'
+    Tag: '<dark_gray>[</dark_gray><#fade07>ɴᴀɴɪ</#fade07><dark_gray>]</dark_gray>'
+    Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWRjZmM2Nzk1NDU0MTkyYWZhN2E4Mjg5MWVhMGZkZWQyNTEyOWY0YmRkYTEyNmQxNmZmMGE2YmMxYTI5OTk5MiJ9fX0='
+    Name: '<#fade07>ɴᴀɴɪ</#fade07> <dark_gray>┃</dark_gray> <white>Tag</white>'
+    Amount: 1
+    Permission: 'bytetag.tag.nani'
+    Lore:
+      Selected:
+        - '<gray>Nani, in japan is ''what1!!?1''</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Selected!</#ffff00>'
+      Unlocked:
+        - '<gray>A very usefull mob for redstone minecrafters!</gray>'
+        - '<gray>you still live in our hearts forever.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#00ff00><bold>✔ Unlocked</bold></#00ff00>'
+        - ''
+        - '<#ffff00>◆ Click to select!</#ffff00>'
+      Locked:
+        - '<gray>A very usefull mob for redstone minecrafters!</gray>'
+        - '<gray>you still live in our hearts forever.</gray>'
+        - ''
+        - '<dark_gray>■</dark_gray> <gray>Tag:</gray> <white><tag></white>'
+        - '<dark_gray>■</dark_gray> <gray>Status:</gray> <#ff0000><bold>✘ Locked</bold></#ff0000>'
+        - ''
+        - '<#ff0000>◆ Locked tag!</#ff0000>'
