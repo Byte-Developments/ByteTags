@@ -1,0 +1,10 @@
+name: ByteTags
+version: '${version}'
+main: org.sodemc.bytetags.ByteTags
+api-version: '1.19'
+
+commands:
+  bytetags:
+    description: 'Main ByteTag command'
+    usage: '/bytetags'
+    permission: bytetags.main

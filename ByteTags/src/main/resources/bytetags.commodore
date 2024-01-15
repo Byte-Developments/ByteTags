@@ -1,0 +1,13 @@
+bytetags {
+  menu {
+    player brigadier:string quotable_phrase;
+  }
+  help {
+
+  }
+  tag {
+    check {
+      checked brigadier:string quotable_phrase;
+    }
+  }
+}
